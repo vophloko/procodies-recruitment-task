@@ -19,10 +19,12 @@ const faqs = ref([
 </script>
 
 <template>
-  <section class="bg-[#F5F5F5] px-4 py-6 flex gap-8">
-    <article v-for="{ answer, question } in faqs">
-      <h3 class="text-xs font-semibold mb-1">{{ question }}</h3>
-      <p class="text-xxs">{{ answer }}</p>
-    </article>
+  <section class="bg-[#F5F5F5] py-6">
+    <div class="container flex gap-8">
+      <article v-for="{ answer, question } in faqs">
+        <h3 class="text-xs font-semibold mb-1">{{ question }}</h3>
+        <p class="text-xxs">{{ answer }}</p>
+      </article>
+    </div>
   </section>
 </template>

@@ -3,10 +3,11 @@ const value = ref("dsadsa");
 </script>
 
 <template>
-  <main class="mx-auto my-4 container text-primary-1">
-    <section class="flex items-center gap-4 mb-12">
-      <div class="bg-gray-200 w-[300px] h-[600px] relative">
-        <PriceLabel class="absolute top-0 right-0" />
+  <main class="mx-auto grid grid-cols-[1fr_auto_1fr] my-4 text-primary-1">
+    <section class="container col-start-2 flex items-center gap-4 mb-12">
+      <div class="relative">
+        <PriceLabel class="absolute -top-4 -right-[5px]" />
+        <UiGalleria class="w-[480px]" />
       </div>
       <div class="text-primary-2">
         <h1 class="text-3xl font-extrabold mb-2">
@@ -15,40 +16,10 @@ const value = ref("dsadsa");
         <p class="text-xl mb-[23px]">
           Unleash the Excitement of Mystery Electronics
         </p>
-        <div
-          class="rounded-[20px] border border-brand-gray-1 p-6 flex flex-col gap-6"
-        >
-          <h3 class="text-xxl font-medium text-primary-1 text-center">
-            Enter details
-          </h3>
-
-          <div class="bg-gray-200 h-[300px]"></div>
-          <button
-            class="bg-primary-3 rounded-[10px] px-4 py-3 uppercase font-semibold text-white"
-          >
-            Proceed to payment
-          </button>
-          <div class="flex gap-4 mx-auto h-[40px]">
-            <img
-              class="object-contain w-[93.33px]"
-              src="~/assets/img/_1.png"
-              alt=""
-            />
-            <img
-              class="object-contain w-[93.33px]"
-              src="~/assets/img/_2.png"
-              alt=""
-            />
-            <img
-              class="object-contain w-[93.33px]"
-              src="~/assets/img/_3.png"
-              alt=""
-            />
-          </div>
-        </div>
+        <DetailsForm />
       </div>
     </section>
-    <section class="mb-8">
+    <section class="container col-start-2 mb-8">
       <div class="text-center">
         <h2 class="text-2xxl font-bold mb-2">
           Top Tech Mystery Box <br />at Unbeatable Prices
@@ -58,8 +29,10 @@ const value = ref("dsadsa");
         </p>
       </div>
     </section>
-    <section class="grid grid-cols-2 gap-8 items-center mb-12">
-      <img src="~/assets/img/4.png" alt="" />
+    <section
+      class="container col-start-2 grid grid-cols-2 gap-8 items-center mb-12"
+    >
+      <img class="rounded-[30px]" src="/img/4.png" alt="" />
       <div>
         <h2 class="text-2xxl font-bold mb-6">
           Curious about the <span class="text-primary-3">StockX</span> Mystery
@@ -79,7 +52,9 @@ const value = ref("dsadsa");
         </div>
       </div>
     </section>
-    <section class="grid grid-cols-2 gap-8 items-center mb-12">
+    <section
+      class="container col-start-2 grid grid-cols-2 gap-8 items-center mb-12"
+    >
       <div>
         <h2 class="text-2xxl font-bold mb-6">
           Why is everyone buzzing about these boxes?
@@ -98,16 +73,16 @@ const value = ref("dsadsa");
           </p>
         </div>
       </div>
-      <img src="~/assets/img/5.png" alt="" />
+      <img class="rounded-[30px]" src="/img/5.png" alt="" />
     </section>
-    <Faq class="mb-8" />
-    <section>
+    <Faq class="mb-8 col-start-1 -col-end-1" />
+    <section class="container col-start-2">
       <p class="text-xs text-center mb-1">
         We accept the following credit cards
       </p>
       <img
         class="max-h-[40px] object-contain mx-auto"
-        src="~/assets/img/accepted-cards.png"
+        src="/img/accepted-cards.png"
         alt=""
       />
     </section>

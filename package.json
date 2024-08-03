@@ -11,13 +11,22 @@
   },
   "dependencies": {
     "@nuxt/fonts": "^0.7.1",
-    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@vee-validate/zod": "^4.13.2",
+    "@vueuse/core": "^10.11.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.424.0",
     "nuxt": "^3.12.4",
-    "primevue": "^4.0.4",
-    "tailwindcss-primeui": "^0.3.4",
-    "vue": "latest"
+    "radix-vue": "^1.9.2",
+    "shadcn-nuxt": "^0.10.4",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "vee-validate": "^4.13.2",
+    "vue": "latest",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@primevue/nuxt-module": "^4.0.4"
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "typescript": "^5.5.4"
   }
 }
