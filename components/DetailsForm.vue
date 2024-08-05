@@ -50,7 +50,7 @@ const onSubmit = form.handleSubmit(() => {
   <div
     class="rounded-[20px] border border-brand-gray-1 p-6 flex flex-col gap-6"
   >
-    <span class="block text-xxl font-medium text-primary-1 text-center">
+    <span class="block text-2xl font-medium text-primary-1 text-center">
       Enter details
     </span>
     <form class="w-full grid grid-cols-2 gap-4" @submit="onSubmit">

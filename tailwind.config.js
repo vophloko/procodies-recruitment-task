@@ -20,16 +20,16 @@ module.exports = {
       },
     },
     fontSize: {
-      'xxs': ['10px', '16px'],
+      '2xs': ['10px', '16px'],
       'xs': ['12px', '16px'],
       'sm': ['14px', '16.41px'],
       'base': ['16px', '24px'],
       'lg': ['20px', '23.44px'],
       'xl': ['22px', '25.78px'],
-      'xxl': ['32px', '37.5px'],
-      '2xl': ['38px', '44.53px'],
-      '2xxl': ['48px', '52px'],
-      '3xl': ['52px', '55px'],
+      '2xl': ['32px', '37.5px'],
+      '3xl': ['38px', '44.53px'],
+      '4xl': ['48px', '52px'],
+      '5xl': ['52px', '55px'],
     },
     extend: {
       fontFamily: {

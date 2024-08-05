@@ -25,7 +25,7 @@ const faqs = ref([
         <h3 class="text-xs font-semibold mb-1">
           {{ question }}
         </h3>
-        <p class="text-xxs">
+        <p class="text-2xs">
           {{ answer }}
         </p>
       </article>

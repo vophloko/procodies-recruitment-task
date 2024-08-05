@@ -28,7 +28,7 @@ useHead({
           <ImageGallery class="w-[480px]" />
         </div>
         <div class="text-primary-2 w-full">
-          <h1 class="text-3xl font-extrabold mb-2">
+          <h1 class="text-5xl font-extrabold mb-2">
             Chance to win a StockX <br>Mystery Box today!
           </h1>
           <p class="text-xl mb-[23px]">
@@ -39,7 +39,7 @@ useHead({
       </section>
       <section class="container col-start-2 mb-8">
         <div class="text-center">
-          <h2 class="text-2xxl font-bold mb-2">
+          <h2 class="text-4xl font-bold mb-2">
             Top Tech Mystery Box <br>at Unbeatable Prices
           </h2>
           <p class="text-xl font-medium text-primary-3">
@@ -58,7 +58,7 @@ useHead({
           height="1120"
         />
         <div>
-          <h2 class="text-2xxl font-bold mb-6">
+          <h2 class="text-4xl font-bold mb-6">
             Curious about the <span class="text-primary-3">StockX</span> Mystery
             Box?
           </h2>
@@ -80,7 +80,7 @@ useHead({
         class="container col-start-2 grid grid-cols-2 gap-8 items-center mb-12"
       >
         <div>
-          <h2 class="text-2xxl font-bold mb-6">
+          <h2 class="text-4xl font-bold mb-6">
             Why is everyone buzzing about these boxes?
           </h2>
           <div class="space-y-2">
