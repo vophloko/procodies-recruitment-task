@@ -1,16 +1,16 @@
 <script setup lang="ts">
 useHead({
-  title: 'StockX',
+  title: "StockX",
   meta: [
     {
-      name: 'description',
-      content: 'Chance to win a StockX Mystery Box today!',
+      name: "description",
+      content: "Chance to win a StockX Mystery Box today!",
     },
   ],
   htmlAttrs: {
-    lang: 'en',
+    lang: "en",
   },
-})
+});
 </script>
 
 <template>
@@ -33,7 +33,7 @@ useHead({
     <section class="container col-start-2 mb-8">
       <div class="text-center">
         <h2 class="text-2xxl font-bold mb-2">
-          Top Tech Mystery Box <br>at Unbeatable Prices
+          Top Tech Mystery Box <br />at Unbeatable Prices
         </h2>
         <p class="text-xl font-medium text-primary-3">
           Fast shipping | Easy returns | Special discounts for students
@@ -43,7 +43,13 @@ useHead({
     <section
       class="container col-start-2 grid grid-cols-2 gap-8 items-center mb-12"
     >
-      <NuxtImg class="rounded-[30px]" src="/img/4.webp" alt="" />
+      <NuxtImg
+        class="rounded-[30px]"
+        src="/img/4.webp"
+        alt=""
+        width="1120"
+        height="1120"
+      />
       <div>
         <h2 class="text-2xxl font-bold mb-6">
           Curious about the <span class="text-primary-3">StockX</span> Mystery
@@ -84,7 +90,14 @@ useHead({
           </p>
         </div>
       </div>
-      <NuxtImg class="rounded-[30px]" src="/img/5.webp" alt="" loading="lazy" />
+      <NuxtImg
+        class="rounded-[30px]"
+        src="/img/5.webp"
+        alt=""
+        loading="lazy"
+        width="1120"
+        height="1120"
+      />
     </section>
     <FaqSection class="mb-8 col-start-1 -col-end-1" />
     <section class="container col-start-2">
@@ -96,6 +109,8 @@ useHead({
         src="/img/accepted-cards.webp"
         alt=""
         loading="lazy"
+        width="688"
+        height="64"
       />
     </section>
   </main>
