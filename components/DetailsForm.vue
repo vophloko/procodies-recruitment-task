@@ -18,7 +18,7 @@ const formSchema = toTypedSchema(
     street: z
       .string()
       .min(2, 'Street must be at least 2 characters long')
-      .max(100, 'Street must be at most 100 characters long'), // Increased the max length for street
+      .max(100, 'Street must be at most 100 characters long'),
 
     postalCode: z
       .string()
@@ -42,7 +42,7 @@ const form = useForm({
 })
 
 const onSubmit = form.handleSubmit(() => {
-  // console.log('Form submitted!', values)
+  //
 })
 </script>
 

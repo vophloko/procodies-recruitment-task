@@ -7,8 +7,4 @@ export default withNuxt(
   antfu({
     formatters: true,
   }),
-).override('antfu/imports/rules', {
-  rules: {
-    'import/order': ['error', { 'newlines-between': 'always' }],
-  },
-})
+)
