@@ -1,5 +1,16 @@
 <script setup lang="ts">
-const value = ref("dsadsa");
+useHead({
+  title: 'StockX',
+  meta: [
+    {
+      name: 'description',
+      content: 'Chance to win a StockX Mystery Box today!',
+    },
+  ],
+  htmlAttrs: {
+    lang: 'en',
+  },
+})
 </script>
 
 <template>
@@ -22,7 +33,7 @@ const value = ref("dsadsa");
     <section class="container col-start-2 mb-8">
       <div class="text-center">
         <h2 class="text-2xxl font-bold mb-2">
-          Top Tech Mystery Box <br />at Unbeatable Prices
+          Top Tech Mystery Box <br>at Unbeatable Prices
         </h2>
         <p class="text-xl font-medium text-primary-3">
           Fast shipping | Easy returns | Special discounts for students
@@ -32,7 +43,7 @@ const value = ref("dsadsa");
     <section
       class="container col-start-2 grid grid-cols-2 gap-8 items-center mb-12"
     >
-      <img class="rounded-[30px]" src="/img/4.png" alt="" />
+      <NuxtImg class="rounded-[30px]" src="/img/4.webp" alt="" />
       <div>
         <h2 class="text-2xxl font-bold mb-6">
           Curious about the <span class="text-primary-3">StockX</span> Mystery
@@ -73,17 +84,18 @@ const value = ref("dsadsa");
           </p>
         </div>
       </div>
-      <img class="rounded-[30px]" src="/img/5.png" alt="" />
+      <NuxtImg class="rounded-[30px]" src="/img/5.webp" alt="" loading="lazy" />
     </section>
-    <Faq class="mb-8 col-start-1 -col-end-1" />
+    <FaqSection class="mb-8 col-start-1 -col-end-1" />
     <section class="container col-start-2">
       <p class="text-xs text-center mb-1">
         We accept the following credit cards
       </p>
-      <img
+      <NuxtImg
         class="max-h-[40px] object-contain mx-auto"
-        src="/img/accepted-cards.png"
+        src="/img/accepted-cards.webp"
         alt=""
+        loading="lazy"
       />
     </section>
   </main>
