@@ -1,5 +1,9 @@
 # StockX
 
+## User metrics
+
+![Results](docs/user-metrics.png)
+
 ## Setup
 
 Make sure to install the dependencies:
