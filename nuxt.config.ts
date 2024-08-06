@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxt/eslint',
+    '@nuxtjs/i18n',
   ],
   fonts: {
     families: [

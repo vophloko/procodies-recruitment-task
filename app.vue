@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { ConfigProvider } from 'radix-vue'
+import type { Image } from '@/components/ImageGallery.vue'
 
 const useIdFunction = () => useId()
 
-useHead({
+const head = useLocaleHead({
+  addDirAttribute: true,
+  identifierAttribute: 'id',
+  addSeoAttributes: true,
+})
+
+const { t } = useI18n()
+
+useLocaleHead({
   title: 'StockX',
   meta: [
     {
@@ -11,28 +20,88 @@ useHead({
       content: 'Chance to win a StockX Mystery Box today!',
     },
   ],
-  htmlAttrs: {
-    lang: 'en',
-  },
 })
+
+const images = ref<Image[]>([
+  {
+    id: 0,
+    src: '0.webp',
+    alt: t('img.products.0'),
+    width: '1126',
+    height: '1126',
+  },
+  {
+    id: 1,
+    src: '1.webp',
+    alt: t('img.products.1'),
+    width: '300',
+    height: '300',
+  },
+  {
+    id: 2,
+    src: '2.webp',
+    alt: t('img.products.2'),
+    width: '890',
+    height: '890',
+  },
+  {
+    id: 3,
+    src: '3.webp',
+    alt: t('img.products.3'),
+    width: '993',
+    height: '978',
+  },
+])
 </script>
 
 <template>
   <ConfigProvider :use-id="useIdFunction">
-    <main class="mx-auto grid grid-cols-[1fr_auto_1fr] my-4 text-primary-1">
+    <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
+      <Head>
+        <Title>{{ $t("meta.title") }}</Title>
+        <Meta name="description" :content="$t('meta.description')" />
+        <template v-for="link in head.link" :key="link.id">
+          <Link
+            :id="link.id"
+            :rel="link.rel"
+            :href="link.href"
+            :hreflang="link.hreflang"
+          />
+        </template>
+        <template v-for="meta in head.meta" :key="meta.id">
+          <Meta
+            :id="meta.id"
+            :property="meta.property"
+            :content="meta.content"
+          />
+        </template>
+      </Head>
+      <Body>
+        <slot />
+      </Body>
+    </Html>
+    <main
+      class="mx-auto grid grid-cols-[1fr_auto_1fr] my-4 text-primary-1 whitespace-pre-line"
+    >
       <section
         class="container col-start-2 flex flex-auto items-center gap-4 mb-12"
       >
         <div class="relative">
-          <PriceLabel class="absolute -top-4 -right-[5px]" />
-          <ImageGallery class="w-[480px]" />
+          <PriceLabel
+            :data="{
+              value: 1.99,
+              originalValue: 500,
+            }"
+            class="absolute -top-4 -right-[5px]"
+          />
+          <ImageGallery :data="{ images }" class="w-[480px]" />
         </div>
         <div class="text-primary-2 w-full">
           <h1 class="text-5xl font-extrabold mb-2">
-            Chance to win a StockX <br>Mystery Box today!
+            {{ $t("app.title") }}
           </h1>
           <p class="text-xl mb-[23px]">
-            Unleash the Excitement of Mystery Electronics
+            {{ $t("app.subtitle") }}
           </p>
           <DetailsForm />
         </div>
@@ -40,10 +109,10 @@ useHead({
       <section class="container col-start-2 mb-8">
         <div class="text-center">
           <h2 class="text-4xl font-bold mb-2">
-            Top Tech Mystery Box <br>at Unbeatable Prices
+            {{ $t("app.section0.title") }}
           </h2>
           <p class="text-xl font-medium text-primary-3">
-            Fast shipping | Easy returns | Special discounts for students
+            {{ $t("app.section0.subtitle") }}
           </p>
         </div>
       </section>
@@ -59,19 +128,20 @@ useHead({
         />
         <div>
           <h2 class="text-4xl font-bold mb-6">
-            Curious about the <span class="text-primary-3">StockX</span> Mystery
-            Box?
+            <i18n-t keypath="app.section1.title.content" scope="global">
+              <template #highlighted>
+                <span class="text-primary-3">{{
+                  $t("app.section1.title.highlighted")
+                }}</span>
+              </template>
+            </i18n-t>
           </h2>
           <div class="space-y-2">
             <p>
-              Experience the thrill of unboxing cutting-edge gadgets with Stockx
-              Mystery Boxes. Each box is a treasure trove of high-quality
-              electronics, handpicked to elevate your tech game.
+              {{ $t("app.section1.content.p0") }}
             </p>
             <p>
-              Expect the unexpected! Our boxes are packed with the latest
-              gadgets, from smartphones to gaming consoles, ensuring you get the
-              best tech surprises every time.
+              {{ $t("app.section1.content.p1") }}
             </p>
           </div>
         </div>
@@ -81,19 +151,14 @@ useHead({
       >
         <div>
           <h2 class="text-4xl font-bold mb-6">
-            Why is everyone buzzing about these boxes?
+            {{ $t("app.section2.title") }}
           </h2>
           <div class="space-y-2">
             <p>
-              StockX Mystery Boxes are not just about products; they're about
-              the experience. Imagine the excitement of unveiling top-tier
-              electronics at a fraction of the cost.
+              {{ $t("app.section2.content.p0") }}
             </p>
             <p>
-              Our boxes include a variety of premium tech items, making it a
-              must-have for every tech enthusiast. Join the buzz and see why
-              everyone is raving about the unbeatable value and surprise factor
-              of Stockx Mystery Boxes!
+              {{ $t("app.section2.content.p1") }}
             </p>
           </div>
         </div>
@@ -109,12 +174,12 @@ useHead({
       <FaqSection class="mb-8 col-start-1 -col-end-1" />
       <section class="container col-start-2">
         <p class="text-xs text-center mb-1">
-          We accept the following credit cards
+          {{ $t("app.section3.title") }}
         </p>
         <NuxtImg
           class="max-h-[40px] object-contain mx-auto"
           src="/img/accepted-cards.webp"
-          alt="Visa, Mastercard, Maestro, Discover Network, American Express, Verfied by Visa, MasterCard SecureCode"
+          :alt="$t('img.acceptedCards')"
           loading="lazy"
           width="688"
           height="64"
